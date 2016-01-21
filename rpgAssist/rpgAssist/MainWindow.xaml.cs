@@ -35,6 +35,8 @@ namespace rpgAssist
             {
                 string filename = dlg.FileName;
                 Character character = new Character();
+                character.CharacterInfo.Add("CharName", CharNameTxtBx.Text);
+                character.CharacterInfo.Add("Ancestry", AncestryTxtBx.Text);
                 XmlData.saveData(character, filename);
             }
         }

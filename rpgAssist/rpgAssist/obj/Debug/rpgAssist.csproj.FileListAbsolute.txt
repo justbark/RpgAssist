@@ -12,3 +12,5 @@ C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssi
 C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.csproj.GenerateResource.Cache
 C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.exe
 C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.pdb
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\SpellForm.g.cs
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\SpellForm.baml
