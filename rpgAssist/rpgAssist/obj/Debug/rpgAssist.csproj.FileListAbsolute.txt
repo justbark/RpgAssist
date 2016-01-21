@@ -1,1 +1,14 @@
 C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\bin\Debug\rpgAssist.exe.config
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\bin\Debug\rpgAssist.exe
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\bin\Debug\rpgAssist.pdb
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.csprojResolveAssemblyReference.cache
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\MainWindow.g.cs
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\App.g.cs
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist_MarkupCompile.cache
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist_MarkupCompile.lref
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\MainWindow.baml
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.g.resources
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.Properties.Resources.resources
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.csproj.GenerateResource.Cache
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.exe
+C:\Users\Justin\Documents\GitHub\RpgAssist\rpgAssist\rpgAssist\obj\Debug\rpgAssist.pdb

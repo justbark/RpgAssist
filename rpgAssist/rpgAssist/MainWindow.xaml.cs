@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,19 @@ namespace rpgAssist
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Text documents (.txt)|*.txt";
+            if (dlg.ShowDialog() == true)
+            {
+                string filename = dlg.FileName;
+                Character character = new Character();
+                XmlData.saveData(character, filename);
+            }
         }
     }
 }
