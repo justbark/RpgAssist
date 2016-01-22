@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Character.cs" />
+    <Compile Include="Roll.cs" />
+    <Compile Include="Spell.cs" />
     <Compile Include="SpellForm.xaml.cs">
       <DependentUpon>SpellForm.xaml</DependentUpon>
     </Compile>

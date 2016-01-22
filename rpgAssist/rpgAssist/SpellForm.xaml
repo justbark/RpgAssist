@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rpgAssist"
         mc:Ignorable="d"
-        Title="SpellForm" Height="300" Width="300">
-    <Grid>
-        
+        Title="Spell Info" Height="305.597" Width="476.866">
+    <Grid Margin="0,0,0,-2.2">
+        <Label x:Name="DescriptionEditLbl" Content="Description:" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="DurationEditLbl" Content="Duration:" HorizontalAlignment="Left" Margin="280,36,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="RankEditLbl" Content="Rank:" HorizontalAlignment="Left" Margin="280,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AreaEditLbl" Content="Target / Area:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="RequirementEditLbl" Content="Requirement" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="TraditionEditLbl" Content="Tradition" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="SnellNameEditLbl" Content="Spell Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="DescriptionEditTxtBx" HorizontalAlignment="Left" Height="70" Margin="10,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="449"/>
+        <TextBox x:Name="DurationEditTxtBx" HorizontalAlignment="Left" Height="23" Margin="339,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="RankEditTxtBx" HorizontalAlignment="Left" Height="23" Margin="339,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AreaEditTxtBx" HorizontalAlignment="Left" Height="23" Margin="93,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ReqEditTxtBx" HorizontalAlignment="Left" Height="23" Margin="93,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TraditionEditTxtBx" HorizontalAlignment="Left" Height="23" Margin="93,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SpellNameEditTxtBx" HorizontalAlignment="Left" Height="23" Margin="93,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="CancelEditBtn" Content="Cancel" HorizontalAlignment="Left" Margin="384,248,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="SubmitEditBtn" Content="Submit" HorizontalAlignment="Left" Margin="304,248,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>

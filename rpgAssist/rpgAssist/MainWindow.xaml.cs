@@ -35,9 +35,20 @@ namespace rpgAssist
             {
                 string filename = dlg.FileName;
                 Character character = new Character();
-                character.CharacterInfo.Add("CharName", CharNameTxtBx.Text);
-                character.CharacterInfo.Add("Ancestry", AncestryTxtBx.Text);
+                //character.CharacterInfo.Add("CharName", CharNameTxtBx.Text);
+                //character.CharacterInfo.Add("Ancestry", AncestryTxtBx.Text);
                 XmlData.saveData(character, filename);
+            }
+        }
+
+        private void RollBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ResultListBx.Items.Clear();
+            Roll myRoll = new Roll(Convert.ToInt16(DieNumberTxtBx.Text), Convert.ToInt16(DieTypeTxtBx.Text), Convert.ToInt16(ModifierTxtBx.Text));
+            ResultToChangeLbl.Content = Convert.ToString(myRoll.rollDice());
+            for (int i = 0; i < myRoll.dieRes.Length; i++)
+            {
+                ResultListBx.Items.Add("dice number " + (i + 1) + " = " + myRoll.dieRes[i]);
             }
         }
     }

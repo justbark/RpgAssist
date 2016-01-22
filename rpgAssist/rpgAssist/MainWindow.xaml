@@ -43,7 +43,7 @@
             <TabItem x:Name="PathsTab" Header="Paths" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="53.6">
                 <Grid x:Name="PathsGrid" Background="#FFE5E5E5">
                     <Label x:Name="NoviceLbl" Content="Novice Path:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="NoviceTxtBx" HorizontalAlignment="Left" Height="23" Margin="90,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+                    <TextBox x:Name="NoviceTxtBx" HorizontalAlignment="Left" Height="23" Margin="99,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
                     <Label x:Name="NoviceTrainingLbl" Content="Training:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="NoviceTalentsLbl" Content="Talents" HorizontalAlignment="Left" Margin="17,62,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="ExpertPathLbl" Content="Expert Path:" HorizontalAlignment="Left" Margin="347,10,0,0" VerticalAlignment="Top"/>
@@ -54,14 +54,14 @@
                     <Label x:Name="MasterQuestLbl" Content="Master Quest:" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="MasterStoryDevLbl" Content="Story Development:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="MasterTalentsLbl" Content="Talents:" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="NoviceTrainingTxtBx" HorizontalAlignment="Left" Height="23" Margin="69,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233"/>
-                    <TextBox x:Name="NoviceTalentsTxtBx" HorizontalAlignment="Left" Height="67" Margin="69,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233"/>
+                    <TextBox x:Name="NoviceTrainingTxtBx" HorizontalAlignment="Left" Height="23" Margin="99,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="NoviceTalentsTxtBx" HorizontalAlignment="Left" Height="67" Margin="99,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="ExpertPathTxtBx" HorizontalAlignment="Left" Height="23" Margin="424,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327"/>
                     <TextBox x:Name="CharacterObjTxtBx" HorizontalAlignment="Left" Height="23" Margin="425,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326"/>
                     <TextBox x:Name="ExpertStoryDevTxtBx" HorizontalAlignment="Left" Height="45" Margin="425,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326"/>
                     <TextBox x:Name="ExpertTalentsTxtBx" HorizontalAlignment="Left" Height="47" Margin="425,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326"/>
-                    <TextBox x:Name="MasterPathTxtBx" HorizontalAlignment="Left" Height="23" Margin="90,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
-                    <TextBox x:Name="MasterQuestTxtBx" HorizontalAlignment="Left" Height="23" Margin="90,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="661"/>
+                    <TextBox x:Name="MasterPathTxtBx" HorizontalAlignment="Left" Height="23" Margin="99,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="MasterQuestTxtBx" HorizontalAlignment="Left" Height="23" Margin="99,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="652"/>
                     <TextBox x:Name="MasterStoryDevTextBx" HorizontalAlignment="Left" Height="45" Margin="128,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="623"/>
                     <TextBox x:Name="MasterTalentTxtBx" HorizontalAlignment="Left" Height="55" Margin="63,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="688"/>
                 </Grid>
@@ -98,6 +98,7 @@
                         <Label x:Name="DurationLbl" Content="Duration:" HorizontalAlignment="Left" Margin="207,89,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="DurationToChangeLbl" Content="" HorizontalAlignment="Left" Margin="271,89,0,0" VerticalAlignment="Top"/>
                     </Grid>
+                    <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Left" Margin="269,57,0,0" VerticalAlignment="Top" Width="75"/>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -134,7 +135,7 @@
                 <TextBox x:Name="ModifierTxtBx" HorizontalAlignment="Left" Height="23" Margin="134,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
                 <Label x:Name="ResultLbl" Content="Result:" HorizontalAlignment="Left" Margin="6,33,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="ResultToChangeLbl" Content="" HorizontalAlignment="Left" Margin="51,33,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="RollBtn" Content="Roll" HorizontalAlignment="Left" Margin="168,33,0,0" VerticalAlignment="Top" Width="43"/>
+                <Button x:Name="RollBtn" Content="Roll" HorizontalAlignment="Left" Margin="168,33,0,0" VerticalAlignment="Top" Width="43" Click="RollBtn_Click"/>
                 <ListBox x:Name="ResultListBx" HorizontalAlignment="Left" Height="46" Margin="6,57,0,0" VerticalAlignment="Top" Width="205"/>
             </Grid>
         </GroupBox>
