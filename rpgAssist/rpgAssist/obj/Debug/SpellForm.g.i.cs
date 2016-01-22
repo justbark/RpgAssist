@@ -245,6 +245,12 @@ namespace rpgAssist {
             return;
             case 16:
             this.SubmitEditBtn = ((System.Windows.Controls.Button)(target));
+            
+            #line 25 "..\..\SpellForm.xaml"
+            this.SubmitEditBtn.Click += new System.Windows.RoutedEventHandler(this.SubmitEditBtn_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

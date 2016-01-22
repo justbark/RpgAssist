@@ -6,7 +6,62 @@ using System.Threading.Tasks;
 
 namespace rpgAssist
 {
-    class Spell
+    public class Spell
     {
+        private string spellName;
+        private string castsPerDay;
+        private string casts;
+        private string rank;
+        private string description;
+        private string tradition;
+        private string requirement;
+        private string duration;
+        private string area;
+
+        public string Area
+        {
+            get { return area; }
+            set { area = value; }
+        }
+        public string Duration
+        {
+            get { return duration; }
+            set { duration = value; }
+        }
+        public string Requirement
+        {
+            get { return requirement; }
+            set { requirement = value; }
+        }
+        public string Tradition
+        {
+            get { return tradition; }
+            set { tradition = value; }
+        }
+        public string SpellName
+        {
+            get { return spellName; }
+            set { spellName = value; }
+        }
+        public string CastsPerDay
+        {
+            get { return castsPerDay; }
+            set { castsPerDay = value; }
+        }
+        public string Casts
+        {
+            get { return casts; }
+            set { casts = value; }
+        }
+        public string Rank
+        {
+            get { return rank; }
+            set { rank = value; }
+        }
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
     }
 }

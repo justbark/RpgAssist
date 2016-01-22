@@ -1179,9 +1179,21 @@ namespace rpgAssist {
             return;
             case 58:
             this.SpellListBox = ((System.Windows.Controls.ListBox)(target));
+            
+            #line 74 "..\..\MainWindow.xaml"
+            this.SpellListBox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.SpellListBox_SelectionChanged);
+            
+            #line default
+            #line hidden
             return;
             case 59:
             this.AddSpellBtn = ((System.Windows.Controls.Button)(target));
+            
+            #line 75 "..\..\MainWindow.xaml"
+            this.AddSpellBtn.Click += new System.Windows.RoutedEventHandler(this.AddSpellBtn_Click);
+            
+            #line default
+            #line hidden
             return;
             case 60:
             this.listBox = ((System.Windows.Controls.ListBox)(target));

@@ -13,17 +13,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.Serialization;
+using System.Xml;
 
 namespace rpgAssist
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    public static class shared
+    {
+        public static Spell currentSpell;
+        public static Character character;
+        public static ListBox spellListBx;
+    }
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            shared.spellListBx = SpellListBox;
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -35,10 +44,11 @@ namespace rpgAssist
             {
                 string filename = dlg.FileName;
                 Character character = new Character();
-                //character.CharacterInfo.Add("CharName", CharNameTxtBx.Text);
-                //character.CharacterInfo.Add("Ancestry", AncestryTxtBx.Text);
+
                 XmlData.saveData(character, filename);
             }
+           
+
         }
 
         private void RollBtn_Click(object sender, RoutedEventArgs e)
@@ -50,6 +60,20 @@ namespace rpgAssist
             {
                 ResultListBx.Items.Add("dice number " + (i + 1) + " = " + myRoll.dieRes[i]);
             }
+        }
+
+        private void AddSpellBtn_Click(object sender, RoutedEventArgs e)
+        {
+            shared.currentSpell = null;
+            SpellForm spellForm = new SpellForm();
+            spellForm.Show();
+        }
+
+        private void SpellListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //use this to update spell info next to the list box.
+            //get the current spell from the listbox.Selected item.
+            shared.currentSpell = shared.character.spells.Where(x => x.SpellName == SpellListBox.SelectedItem.ToString()).First();
         }
     }
 }

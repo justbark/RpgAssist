@@ -71,8 +71,8 @@
             </TabItem>
             <TabItem x:Name="SpellTab" Header="Spells" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="53.6">
                 <Grid x:Name="SpellGrid" Background="#FFE5E5E5">
-                    <ListBox x:Name="SpellListBox" HorizontalAlignment="Left" Height="267" Margin="10,34,0,0" VerticalAlignment="Top" Width="174"/>
-                    <Button x:Name="AddSpellBtn" Content="Add Spell" HorizontalAlignment="Left" Margin="189,34,0,0" VerticalAlignment="Top" Width="75"/>
+                    <ListBox x:Name="SpellListBox" HorizontalAlignment="Left" Height="267" Margin="10,34,0,0" VerticalAlignment="Top" Width="174" SelectionChanged="SpellListBox_SelectionChanged"/>
+                    <Button x:Name="AddSpellBtn" Content="Add Spell" HorizontalAlignment="Left" Margin="189,34,0,0" VerticalAlignment="Top" Width="75" Click="AddSpellBtn_Click"/>
                     <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="267" Margin="576,34,0,0" VerticalAlignment="Top" Width="175"/>
                     <Button x:Name="CastBtn" Content="Cast" HorizontalAlignment="Left" Margin="189,57,0,0" VerticalAlignment="Top" Width="75"/>
                     <Label x:Name="SpellsLbl" Content="Spells:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>

@@ -23,5 +23,25 @@ namespace rpgAssist
         {
             InitializeComponent();
         }
+
+        private void SubmitEditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (shared.currentSpell == null)
+            {
+                SubmitEditBtn.Content = "Add newSpell";
+                Spell mySpell = new Spell();
+                mySpell.SpellName = SpellNameEditTxtBx.Text;
+                mySpell.Rank = RankEditTxtBx.Text;
+                mySpell.Description = DescriptionEditTxtBx.Text;
+                shared.character.spells.Add(mySpell);
+                shared.spellListBx.Items.Add(mySpell.SpellName);
+            }
+            else
+            {
+                SubmitEditBtn.Content = "Edit current spell";
+            }
+            
+            
+        }
     }
 }
