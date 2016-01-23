@@ -73,8 +73,8 @@
                 <Grid x:Name="SpellGrid" Background="#FFE5E5E5">
                     <ListBox x:Name="SpellListBox" HorizontalAlignment="Left" Height="267" Margin="10,34,0,0" VerticalAlignment="Top" Width="174" SelectionChanged="SpellListBox_SelectionChanged"/>
                     <Button x:Name="AddSpellBtn" Content="Add Spell" HorizontalAlignment="Left" Margin="189,34,0,0" VerticalAlignment="Top" Width="75" Click="AddSpellBtn_Click"/>
-                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="267" Margin="576,34,0,0" VerticalAlignment="Top" Width="175"/>
-                    <Button x:Name="CastBtn" Content="Cast" HorizontalAlignment="Left" Margin="189,57,0,0" VerticalAlignment="Top" Width="75"/>
+                    <ListBox x:Name="CastListBx" HorizontalAlignment="Left" Height="267" Margin="576,34,0,0" VerticalAlignment="Top" Width="175" SelectionChanged="CastListBx_SelectionChanged"/>
+                    <Button x:Name="CastBtn" Content="Cast" HorizontalAlignment="Left" Margin="189,57,0,0" VerticalAlignment="Top" Width="75" Click="CastBtn_Click"/>
                     <Label x:Name="SpellsLbl" Content="Spells:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="AlreadyCastLbl" Content="Casts:" HorizontalAlignment="Left" Margin="576,10,0,0" VerticalAlignment="Top"/>
                     <GroupBox x:Name="SpellGroupBx" Header="Spell Info" HorizontalAlignment="Left" Margin="192,81,0,0" VerticalAlignment="Top" Height="220" Width="379"/>
@@ -98,15 +98,15 @@
                         <Label x:Name="DurationLbl" Content="Duration:" HorizontalAlignment="Left" Margin="207,89,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="DurationToChangeLbl" Content="" HorizontalAlignment="Left" Margin="271,89,0,0" VerticalAlignment="Top"/>
                     </Grid>
-                    <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Left" Margin="269,57,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Left" Margin="269,57,0,0" VerticalAlignment="Top" Width="75" Click="EditBtn_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
         <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" Margin="524,485,0,0" VerticalAlignment="Top" Width="75" Click="SaveBtn_Click"/>
-        <Button x:Name="LoadBtn" Content="Load" HorizontalAlignment="Left" Margin="604,484,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="ClearBtn" Content="Clear" HorizontalAlignment="Left" Margin="684,485,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="LoadBtn" Content="Load" HorizontalAlignment="Left" Margin="604,484,0,0" VerticalAlignment="Top" Width="75" Click="LoadBtn_Click"/>
+        <Button x:Name="NewCharBtn" Content="New" HorizontalAlignment="Left" Margin="684,485,0,0" VerticalAlignment="Top" Width="75" Click="NewCharBtn_Click"/>
         <GroupBox x:Name="AttributesGrpBx" Header="Attributes" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Height="159" Width="509">
-            <Grid x:Name="AttributesGrid" HorizontalAlignment="Left" Height="125" Margin="10,10,0,0" VerticalAlignment="Top" Width="475">
+            <Grid x:Name="AttributesGrid" HorizontalAlignment="Left" Height="118" Margin="10,10,0,0" VerticalAlignment="Top" Width="475">
                 <Label x:Name="StrLbl" Content="Str." HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="WillLbl" Content="Will" HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="AgilLbl" Content="Agility" HorizontalAlignment="Left" Margin="263,9,0,0" VerticalAlignment="Top"/>

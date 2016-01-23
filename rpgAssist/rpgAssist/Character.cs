@@ -10,8 +10,9 @@ namespace rpgAssist
 {
     public class Character
     {
-
+        private string tradition;
         private string level;
+        private string racialTalent;
         private string charName;
         private string age;
         private string gender;
@@ -70,6 +71,16 @@ namespace rpgAssist
 
         public List<Spell> spells = new List<Spell>();
 
+        public string Tradition
+        {
+            get { return tradition; }
+            set { tradition = value; }
+        }
+        public string RacialTalent
+        {
+            get { return racialTalent; }
+            set { racialTalent = value; }
+        }
         public string Level
         {
             get { return level; }
