@@ -192,6 +192,7 @@ namespace rpgAssist
                 return;
             }
             shared.currentSpell.Casts++;
+            updateSpellInfo();
             for (int i = 0; i < shared.spellListView.Items.Count; i++)
             {
                 DependencyObject obj = shared.spellListView.ItemContainerGenerator.ContainerFromIndex(i);
@@ -203,8 +204,7 @@ namespace rpgAssist
                         Color col = (Color)ColorConverter.ConvertFromString("Red");
                         Brush brush = new SolidColorBrush(col);
                         ListViewItem item = (ListViewItem)obj;
-                        if(brush != null)
-                            item.Background = brush;
+                        item.Background = brush;
                     }
                 }
             }
@@ -212,6 +212,10 @@ namespace rpgAssist
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (shared.currentSpell == null)
+            {
+                return;
+            }
             SpellForm spellForm = new SpellForm();
             spellForm.Show();
         }
@@ -223,15 +227,7 @@ namespace rpgAssist
             //get the current spell from the listbox.Selected item.
             shared.currentSpell = shared.character.spells.Where(x => x.SpellName == SpellListView.SelectedItem.ToString()).First();
             //update spell labels to the right of SpellListbox
-            SpellToChangeLbl.Content = shared.currentSpell.SpellName;
-            TraditionToChangeLbl.Content = shared.currentSpell.Tradition;
-            RequirementToChangeLbl.Content = shared.currentSpell.Requirement;
-            AreaToChangeLbl.Content = shared.currentSpell.Area;
-            SpentToChangeLbl.Content = shared.currentSpell.Casts;
-            CastsPerDayToChangeLbl.Content = shared.currentSpell.CastsPerDay;
-            RankToChangeLbl.Content = shared.currentSpell.Rank;
-            DurationToChangeLbl.Content = shared.currentSpell.Duration;
-            DescriptionToChangeLbl.Content = shared.currentSpell.Description;
+            updateSpellInfo();
         }
 
         public void updateChar()
@@ -275,6 +271,18 @@ namespace rpgAssist
             shared.character.Def = DefTxtBx.Text;
             shared.character.Corruption = CorruptTxtBx.Text;
             shared.character.Perception = PerceptTxtBx.Text;
+        }
+        public void updateSpellInfo()
+        {
+            SpellToChangeLbl.Content = shared.currentSpell.SpellName;
+            TraditionToChangeLbl.Content = shared.currentSpell.Tradition;
+            RequirementToChangeLbl.Content = shared.currentSpell.Requirement;
+            AreaToChangeLbl.Content = shared.currentSpell.Area;
+            SpentToChangeLbl.Content = shared.currentSpell.Casts;
+            CastsPerDayToChangeLbl.Content = shared.currentSpell.CastsPerDay;
+            RankToChangeLbl.Content = shared.currentSpell.Rank;
+            DurationToChangeLbl.Content = shared.currentSpell.Duration;
+            DescriptionToChangeLbl.Content = shared.currentSpell.Description;
         }
     }
 }

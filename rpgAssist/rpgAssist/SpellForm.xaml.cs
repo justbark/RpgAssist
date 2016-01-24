@@ -22,27 +22,9 @@ namespace rpgAssist
         public SpellForm()
         {
             InitializeComponent();
-        }
-
-        private void SubmitEditBtn_Click(object sender, RoutedEventArgs e)
-        {
             if (shared.currentSpell == null)
             {
-                SubmitEditBtn.Content = "Add newSpell";            //change the submit btn to avoid confusion (we are adding a new spell here)
-                shared.currentSpell = new Spell();
-
-                shared.currentSpell.SpellName = SpellNameEditTxtBx.Text;
-                shared.currentSpell.Rank = Convert.ToInt32(RankEditTxtBx.Text);
-                shared.currentSpell.Description = DescriptionEditTxtBx.Text;
-                shared.currentSpell.Requirement = ReqEditTxtBx.Text;
-                shared.currentSpell.Area = AreaEditTxtBx.Text;
-                shared.currentSpell.Duration = DurationEditTxtBx.Text;
-
-                shared.currentSpell.Casts = 0;                       //The spell has just been added. So it couldnt have been cast already                                       //go get casts per day        
-
-                shared.character.spells.Add(shared.currentSpell);               //add this spell to Character class
-                shared.spellListView.Items.Add(shared.currentSpell.SpellName);    //add this spell to spell list
-                this.Close();
+                SubmitEditBtn.Content = "Add newSpell";
             }
             else
             {
@@ -53,11 +35,31 @@ namespace rpgAssist
                 ReqEditTxtBx.Text = shared.currentSpell.Requirement;
                 AreaEditTxtBx.Text = shared.currentSpell.Area;
                 DurationEditTxtBx.Text = shared.currentSpell.Duration;
-                                         //go get casts per day
-                this.Close();
             }
-            
-            
+        }
+
+        private void SubmitEditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Spell currSpell = shared.currentSpell != null ? shared.currentSpell : new Spell();
+
+            currSpell.SpellName = SpellNameEditTxtBx.Text;
+            currSpell.Rank = Convert.ToInt32(RankEditTxtBx.Text);
+            currSpell.Description = DescriptionEditTxtBx.Text;
+            currSpell.Requirement = ReqEditTxtBx.Text;
+            currSpell.Area = AreaEditTxtBx.Text;
+            currSpell.Duration = DurationEditTxtBx.Text;
+
+            if (currSpell != shared.currentSpell)
+            {
+                currSpell.Casts = 0;
+                shared.character.spells.Add(currSpell);
+                ListViewItem newItem = new ListViewItem();
+                newItem.Content = currSpell.SpellName;
+                shared.spellListView.Items.Add(newItem);
+            }
+            shared.currentSpell = currSpell;
+            this.Close();
+
         }
     }
 }
