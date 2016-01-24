@@ -80,7 +80,7 @@ namespace rpgAssist
                 shared.character.Dmg = DmgTxtBx.Text;
                 shared.character.HealingRate = HRTxtBx.Text;
                 shared.character.Insanity = InsaneTxtBx.Text;
-                shared.character.Power = PwrTxtBx.Text;
+                shared.character.Power = Convert.ToInt32(PwrTxtBx.Text);
                 shared.character.Def = DefTxtBx.Text;
                 shared.character.Corruption = CorruptTxtBx.Text;
                 shared.character.Perception = PerceptTxtBx.Text;
@@ -221,7 +221,7 @@ namespace rpgAssist
                 DmgTxtBx.Text = shared.character.Dmg;
                 HRTxtBx.Text = shared.character.HealingRate;
                 InsaneTxtBx.Text = shared.character.Insanity;
-                PwrTxtBx.Text = shared.character.Power;
+                PwrTxtBx.Text = Convert.ToString(shared.character.Power);
                 DefTxtBx.Text = shared.character.Def;
                 CorruptTxtBx.Text = shared.character.Corruption;
                 PerceptTxtBx.Text = shared.character.Perception;

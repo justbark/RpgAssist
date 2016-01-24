@@ -64,7 +64,7 @@ namespace rpgAssist
         private string healingRate;
         private string insanity;
         private string corruption;
-        private string power;
+        private int power;
         private string def;
         private string perception;
 
@@ -341,10 +341,16 @@ namespace rpgAssist
             get { return corruption; }
             set { corruption = value; }
         }
-        public string Power
+        public int Power
         {
             get { return power; }
-            set { power = value; }
+            set {
+                    power = value;
+                    foreach ( Spell spell in this.spells)
+                    {
+                        spell.computeCPD(this.power);
+                    }
+                }
         }
         public string Def
         {

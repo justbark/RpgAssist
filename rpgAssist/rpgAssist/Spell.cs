@@ -9,9 +9,9 @@ namespace rpgAssist
     public class Spell
     {
         private string spellName;
-        private string castsPerDay;
+        private int castsPerDay;
         private string casts;
-        private string rank;
+        private int rank;
         private string description;
         private string tradition;
         private string requirement;
@@ -43,7 +43,7 @@ namespace rpgAssist
             get { return spellName; }
             set { spellName = value; }
         }
-        public string CastsPerDay
+        public int CastsPerDay
         {
             get { return castsPerDay; }
             set { castsPerDay = value; }
@@ -53,7 +53,7 @@ namespace rpgAssist
             get { return casts; }
             set { casts = value; }
         }
-        public string Rank
+        public int Rank
         {
             get { return rank; }
             set { rank = value; }
@@ -63,5 +63,11 @@ namespace rpgAssist
             get { return description; }
             set { description = value; }
         }
+
+        public void computeCPD(int pwr)
+        {
+            this.castsPerDay = (pwr + 1) - this.Rank;
+        }
+        
     }
 }
