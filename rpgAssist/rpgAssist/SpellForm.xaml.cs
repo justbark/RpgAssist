@@ -42,7 +42,21 @@ namespace rpgAssist
         {
             Spell currSpell = shared.currentSpell != null ? shared.currentSpell : new Spell();
 
-            currSpell.SpellName = SpellNameEditTxtBx.Text;
+            if (SpellNameEditTxtBx.Text != currSpell.SpellName && currSpell == shared.currentSpell)
+            {
+                currSpell.SpellName = SpellNameEditTxtBx.Text;
+                shared.spellListView.Items.Clear();
+
+                foreach (Spell spell in shared.character.spells) {
+                    ListViewItem newItem = new ListViewItem();
+                    newItem.Content = spell.SpellName;
+                    shared.spellListView.Items.Add(newItem);
+                }
+            }
+            else {
+                currSpell.SpellName = SpellNameEditTxtBx.Text;
+            }
+
             currSpell.Rank = Convert.ToInt32(RankEditTxtBx.Text);
             currSpell.Description = DescriptionEditTxtBx.Text;
             currSpell.Requirement = ReqEditTxtBx.Text;
@@ -56,10 +70,9 @@ namespace rpgAssist
                 ListViewItem newItem = new ListViewItem();
                 newItem.Content = currSpell.SpellName;
                 shared.spellListView.Items.Add(newItem);
+                shared.currentSpell = currSpell;
             }
-            shared.currentSpell = currSpell;
             this.Close();
-
         }
     }
 }
