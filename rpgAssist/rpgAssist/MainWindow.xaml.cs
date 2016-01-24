@@ -25,7 +25,7 @@ namespace rpgAssist
     {
         public static Spell currentSpell;
         public static Character character;
-        public static ListView spellListView;
+        public static System.Windows.Controls.ListView spellListView;
     }
     public partial class MainWindow : Window
     {
@@ -174,7 +174,9 @@ namespace rpgAssist
 
                 foreach(Spell spell in shared.character.spells)
                 {
-                    SpellListView.Items.Add(spell.SpellName);
+                    ListViewItem newItem = new ListViewItem();
+                    newItem.Content = spell.SpellName;
+                    SpellListView.Items.Add(newItem);
                 }
             }
         }
@@ -189,18 +191,20 @@ namespace rpgAssist
                 MessageBox.Show(msg, caption, MessageBoxButton.OK);
                 return;
             }
-            shared.currentSpell.Casts = shared.currentSpell.Casts ++;
-
-            foreach (ListViewItem lvw in SpellListView.Items)
+            shared.currentSpell.Casts++;
+            for (int i = 0; i < shared.spellListView.Items.Count; i++)
             {
-                Spell currSpell = shared.character.spells.Where(x => x.SpellName == lvw.ToString()).First();
+                DependencyObject obj = shared.spellListView.ItemContainerGenerator.ContainerFromIndex(i);
+                Spell currSpell = shared.character.spells.Where(x => x.SpellName == SpellListView.Items[i].ToString()).First();
                 if (currSpell != null)
                 {
                     if (shared.currentSpell.Casts >= shared.currentSpell.CastsPerDay)
                     {
                         Color col = (Color)ColorConverter.ConvertFromString("Red");
                         Brush brush = new SolidColorBrush(col);
-                        lvw.Background = brush;
+                        ListViewItem item = (ListViewItem)obj;
+                        if(brush != null)
+                            item.Background = brush;
                     }
                 }
             }
