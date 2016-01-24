@@ -71,14 +71,11 @@
             </TabItem>
             <TabItem x:Name="SpellTab" Header="Spells" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="53.6">
                 <Grid x:Name="SpellGrid" Background="#FFE5E5E5">
-                    <ListBox x:Name="SpellListBox" HorizontalAlignment="Left" Height="267" Margin="10,34,0,0" VerticalAlignment="Top" Width="174" SelectionChanged="SpellListBox_SelectionChanged"/>
                     <Button x:Name="AddSpellBtn" Content="Add Spell" HorizontalAlignment="Left" Margin="189,34,0,0" VerticalAlignment="Top" Width="75" Click="AddSpellBtn_Click"/>
-                    <ListBox x:Name="CastListBx" HorizontalAlignment="Left" Height="267" Margin="576,34,0,0" VerticalAlignment="Top" Width="175" SelectionChanged="CastListBx_SelectionChanged"/>
                     <Button x:Name="CastBtn" Content="Cast" HorizontalAlignment="Left" Margin="189,57,0,0" VerticalAlignment="Top" Width="75" Click="CastBtn_Click"/>
                     <Label x:Name="SpellsLbl" Content="Spells:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="AlreadyCastLbl" Content="Casts:" HorizontalAlignment="Left" Margin="576,10,0,0" VerticalAlignment="Top"/>
-                    <GroupBox x:Name="SpellGroupBx" Header="Spell Info" HorizontalAlignment="Left" Margin="192,81,0,0" VerticalAlignment="Top" Height="220" Width="379"/>
-                    <Grid x:Name="SpellInfoGrid" HorizontalAlignment="Left" Height="202" Margin="201,99,0,0" VerticalAlignment="Top" Width="361">
+                    <GroupBox x:Name="SpellGroupBx" Header="Spell Info" HorizontalAlignment="Left" Margin="189,91,0,0" VerticalAlignment="Top" Height="220" Width="559"/>
+                    <Grid x:Name="SpellInfoGrid" HorizontalAlignment="Left" Height="202" Margin="201,99,0,0" VerticalAlignment="Top" Width="550">
                         <Label x:Name="SpellNameLbl" Content="Spell:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="SpellToChangeLbl" Content="" HorizontalAlignment="Left" Margin="53,10,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="TraditionLbl" Content="Tradition:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
@@ -88,17 +85,24 @@
                         <Label x:Name="AreLbl" Content="Target / Area:" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="AreaToChangeLbl" Content="" HorizontalAlignment="Left" Margin="95,88,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="DescriptionLbl" Content="Description:" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="DescriptionToChangeLbl" Content="" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="341" Height="53"/>
-                        <Label x:Name="SpentLbl" Content="Spent:" HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="SpentToChangeLbl" Content="" HorizontalAlignment="Left" Margin="249,10,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="CastsPerDayLbl" Content="Casts/Day:" HorizontalAlignment="Left" Margin="201,36,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="CastsPerDayToChangeLbl" Content="" HorizontalAlignment="Left" Margin="272,36,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="RankLbl" Content="Rank:" HorizontalAlignment="Left" Margin="206,62,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="RankToChangeLbl" Content="" HorizontalAlignment="Left" Margin="250,62,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="DurationLbl" Content="Duration:" HorizontalAlignment="Left" Margin="207,89,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="DurationToChangeLbl" Content="" HorizontalAlignment="Left" Margin="271,89,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="DescriptionToChangeLbl" Content="" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="530" Height="53"/>
+                        <Label x:Name="SpentLbl" Content="Spent:" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="SpentToChangeLbl" Content="" HorizontalAlignment="Left" Margin="362,10,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="CastsPerDayLbl" Content="Casts/Day:" HorizontalAlignment="Left" Margin="314,36,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="CastsPerDayToChangeLbl" Content="" HorizontalAlignment="Left" Margin="384,36,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="RankLbl" Content="Rank:" HorizontalAlignment="Left" Margin="314,62,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="RankToChangeLbl" Content="" HorizontalAlignment="Left" Margin="357,62,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="DurationLbl" Content="Duration:" HorizontalAlignment="Left" Margin="314,88,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="DurationToChangeLbl" Content="" HorizontalAlignment="Left" Margin="378,88,0,0" VerticalAlignment="Top"/>
                     </Grid>
                     <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Left" Margin="269,57,0,0" VerticalAlignment="Top" Width="75" Click="EditBtn_Click"/>
+                    <ListView x:Name="SpellListView" HorizontalAlignment="Left" Height="265" Margin="10,36,0,0" VerticalAlignment="Top" Width="174" SelectionChanged="SpellListView_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
         </TabControl>

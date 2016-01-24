@@ -10,7 +10,7 @@ namespace rpgAssist
     {
         private string spellName;
         private int castsPerDay;
-        private string casts;
+        private int casts;
         private int rank;
         private string description;
         private string tradition;
@@ -48,7 +48,7 @@ namespace rpgAssist
             get { return castsPerDay; }
             set { castsPerDay = value; }
         }
-        public string Casts
+        public int Casts
         {
             get { return casts; }
             set { casts = value; }

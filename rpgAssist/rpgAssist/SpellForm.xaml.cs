@@ -38,10 +38,10 @@ namespace rpgAssist
                 shared.currentSpell.Area = AreaEditTxtBx.Text;
                 shared.currentSpell.Duration = DurationEditTxtBx.Text;
 
-                shared.currentSpell.Casts = 0.ToString();                       //The spell has just been added. So it couldnt have been cast already                                       //go get casts per day        
+                shared.currentSpell.Casts = 0;                       //The spell has just been added. So it couldnt have been cast already                                       //go get casts per day        
 
                 shared.character.spells.Add(shared.currentSpell);               //add this spell to Character class
-                shared.spellListBx.Items.Add(shared.currentSpell.SpellName);    //add this spell to spell list
+                shared.spellListView.Items.Add(shared.currentSpell.SpellName);    //add this spell to spell list
                 this.Close();
             }
             else

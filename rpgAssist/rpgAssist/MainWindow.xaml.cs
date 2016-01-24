@@ -25,14 +25,15 @@ namespace rpgAssist
     {
         public static Spell currentSpell;
         public static Character character;
-        public static ListBox spellListBx;
+        public static ListView spellListView;
     }
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            shared.spellListBx = SpellListBox;
+            shared.spellListView = SpellListView;
+            //SpellListView.View = ;
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -109,23 +110,6 @@ namespace rpgAssist
             spellForm.Show();
         }
 
-        private void SpellListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //use this to update spell info next to the list box.
-            //get the current spell from the listbox.Selected item.
-            shared.currentSpell = shared.character.spells.Where(x => x.SpellName == SpellListBox.SelectedItem.ToString()).First();
-            //update spell labels to the right of SpellListbox
-            SpellToChangeLbl.Content = shared.currentSpell.SpellName;
-            TraditionToChangeLbl.Content = shared.currentSpell.Tradition;
-            RequirementToChangeLbl.Content = shared.currentSpell.Requirement;
-            AreaToChangeLbl.Content = shared.currentSpell.Area;
-            SpentToChangeLbl.Content = shared.currentSpell.Casts;
-            CastsPerDayToChangeLbl.Content = shared.currentSpell.CastsPerDay;
-            RankToChangeLbl.Content = shared.currentSpell.Rank;
-            DurationToChangeLbl.Content = shared.currentSpell.Duration;
-            DescriptionToChangeLbl.Content = shared.currentSpell.Description;
-        }
-
         private void NewCharBtn_Click(object sender, RoutedEventArgs e)
         {
             shared.character = new Character();
@@ -152,8 +136,8 @@ namespace rpgAssist
             MasterQuestTxtBx.Clear();
             MasterStoryDevTextBx.Clear();
             MasterTalentTxtBx.Clear();
-            SpellListBox.Items.Clear();
-            CastListBx.Items.Clear();
+            SpellListView.Items.Clear();
+           
             //equipment stuff
             //----------------
             StrTxtBx.Clear();
@@ -228,14 +212,14 @@ namespace rpgAssist
 
                 foreach(Spell spell in shared.character.spells)
                 {
-                    SpellListBox.Items.Add(spell.SpellName);
+                    SpellListView.Items.Add(spell.SpellName);
                 }
             }
         }
 
         private void CastBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(shared.currentSpell.Casts) >= Convert.ToInt32(shared.currentSpell.CastsPerDay))
+            if (shared.currentSpell.Casts >= shared.currentSpell.CastsPerDay)
             {
                 string msg = "you cannot cast this spell anymore";
                 string caption = "No more casts!";
@@ -243,11 +227,6 @@ namespace rpgAssist
                 MessageBox.Show(msg, caption, MessageBoxButton.OK);
             }
             shared.currentSpell.Casts = shared.currentSpell.Casts + 1;
-            if (!CastListBx.Items.Contains(shared.currentSpell.SpellName))
-            {
-                CastListBx.Items.Add(shared.currentSpell.SpellName);
-                SpellListBox.Items.Remove(shared.currentSpell.SpellName);
-            }
             
         }
 
@@ -257,9 +236,11 @@ namespace rpgAssist
             spellForm.Show();
         }
 
-        private void CastListBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SpellListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            shared.currentSpell = shared.character.spells.Where(x => x.SpellName == CastListBx.SelectedItem.ToString()).First();
+            //use this to update spell info next to the list box.
+            //get the current spell from the listbox.Selected item.
+            shared.currentSpell = shared.character.spells.Where(x => x.SpellName == SpellListView.SelectedItem.ToString()).First();
             //update spell labels to the right of SpellListbox
             SpellToChangeLbl.Content = shared.currentSpell.SpellName;
             TraditionToChangeLbl.Content = shared.currentSpell.Tradition;
