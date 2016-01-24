@@ -46,45 +46,7 @@ namespace rpgAssist
                 string filename = dlg.FileName;
                 Character character = new Character();
 
-                shared.character.CharName = CharNameTxtBx.Text;
-                shared.character.Ancestry = AncestryTxtBx.Text;
-                shared.character.Age = AgeTxtBx.Text;
-                shared.character.Gender = GenderTxtBx.Text;
-                shared.character.Build = BuildTxtBx.Text;
-                shared.character.Religion = ReligionTxtBx.Text;
-                shared.character.Languages = LangTxtBx.Text;
-                shared.character.Appearance = AppearanceTxtBx.Text;
-                shared.character.Personality = PersTxtBx.Text;
-                shared.character.RacialTalent = TalentsTxtBx.Text;
-                shared.character.Profession = ProfTxtBx.Text;
-                shared.character.Background = BackgroundTxtBx.Text;
-                shared.character.NovicePath = NoviceTxtBx.Text;
-                shared.character.NoviceTraining = NoviceTrainingTxtBx.Text;
-                shared.character.NoviceTalents = NoviceTalentsTxtBx.Text;
-                shared.character.ExpertPath = ExpertPathTxtBx.Text;
-                shared.character.ExpertCharObj = CharacterObjTxtBx.Text;
-                shared.character.ExpertStoryDev = ExpertStoryDevTxtBx.Text;
-                shared.character.ExpertTalents = ExpertTalentsTxtBx.Text;
-                shared.character.MasterPath = MasterPathTxtBx.Text;
-                shared.character.MasterQuest = MasterQuestTxtBx.Text;
-                shared.character.MasterStoryDev = MasterStoryDevTextBx.Text;
-                shared.character.MasterTalents = MasterTalentTxtBx.Text;
-
-
-                //equipment stuff
-                //----------------
-                shared.character.Strength = StrTxtBx.Text;
-                shared.character.Will = WillTxtBx.Text;
-                shared.character.Agility = AgilTxtBx.Text;
-                shared.character.Intelect = IntTxtBx.Text;
-                shared.character.Health = HealthTxtBx.Text;
-                shared.character.Dmg = DmgTxtBx.Text;
-                shared.character.HealingRate = HRTxtBx.Text;
-                shared.character.Insanity = InsaneTxtBx.Text;
-                shared.character.Power = Convert.ToInt32(PwrTxtBx.Text);
-                shared.character.Def = DefTxtBx.Text;
-                shared.character.Corruption = CorruptTxtBx.Text;
-                shared.character.Perception = PerceptTxtBx.Text;
+                updateChar();
 
                 XmlData.saveData(shared.character, filename);
             }
@@ -219,6 +181,7 @@ namespace rpgAssist
 
         private void CastBtn_Click(object sender, RoutedEventArgs e)
         {
+            updateChar();
             if (shared.currentSpell.Casts >= shared.currentSpell.CastsPerDay)
             {
                 string msg = "you cannot cast this spell anymore";
@@ -226,8 +189,21 @@ namespace rpgAssist
                 MessageBox.Show(msg, caption, MessageBoxButton.OK);
                 return;
             }
-            shared.currentSpell.Casts = shared.currentSpell.Casts + 1;
-            
+            shared.currentSpell.Casts = shared.currentSpell.Casts ++;
+
+            foreach (ListViewItem lvw in SpellListView.Items)
+            {
+                Spell currSpell = shared.character.spells.Where(x => x.SpellName == lvw.ToString()).First();
+                if (currSpell != null)
+                {
+                    if (shared.currentSpell.Casts >= shared.currentSpell.CastsPerDay)
+                    {
+                        Color col = (Color)ColorConverter.ConvertFromString("Red");
+                        Brush brush = new SolidColorBrush(col);
+                        lvw.Background = brush;
+                    }
+                }
+            }
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
@@ -238,6 +214,7 @@ namespace rpgAssist
 
         private void SpellListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            updateChar();
             //use this to update spell info next to the list box.
             //get the current spell from the listbox.Selected item.
             shared.currentSpell = shared.character.spells.Where(x => x.SpellName == SpellListView.SelectedItem.ToString()).First();
@@ -251,6 +228,49 @@ namespace rpgAssist
             RankToChangeLbl.Content = shared.currentSpell.Rank;
             DurationToChangeLbl.Content = shared.currentSpell.Duration;
             DescriptionToChangeLbl.Content = shared.currentSpell.Description;
+        }
+
+        public void updateChar()
+        {
+            shared.character.CharName = CharNameTxtBx.Text;
+            shared.character.Ancestry = AncestryTxtBx.Text;
+            shared.character.Age = AgeTxtBx.Text;
+            shared.character.Gender = GenderTxtBx.Text;
+            shared.character.Build = BuildTxtBx.Text;
+            shared.character.Religion = ReligionTxtBx.Text;
+            shared.character.Languages = LangTxtBx.Text;
+            shared.character.Appearance = AppearanceTxtBx.Text;
+            shared.character.Personality = PersTxtBx.Text;
+            shared.character.RacialTalent = TalentsTxtBx.Text;
+            shared.character.Profession = ProfTxtBx.Text;
+            shared.character.Background = BackgroundTxtBx.Text;
+            shared.character.NovicePath = NoviceTxtBx.Text;
+            shared.character.NoviceTraining = NoviceTrainingTxtBx.Text;
+            shared.character.NoviceTalents = NoviceTalentsTxtBx.Text;
+            shared.character.ExpertPath = ExpertPathTxtBx.Text;
+            shared.character.ExpertCharObj = CharacterObjTxtBx.Text;
+            shared.character.ExpertStoryDev = ExpertStoryDevTxtBx.Text;
+            shared.character.ExpertTalents = ExpertTalentsTxtBx.Text;
+            shared.character.MasterPath = MasterPathTxtBx.Text;
+            shared.character.MasterQuest = MasterQuestTxtBx.Text;
+            shared.character.MasterStoryDev = MasterStoryDevTextBx.Text;
+            shared.character.MasterTalents = MasterTalentTxtBx.Text;
+
+
+            //equipment stuff
+            //----------------
+            shared.character.Strength = StrTxtBx.Text;
+            shared.character.Will = WillTxtBx.Text;
+            shared.character.Agility = AgilTxtBx.Text;
+            shared.character.Intelect = IntTxtBx.Text;
+            shared.character.Health = HealthTxtBx.Text;
+            shared.character.Dmg = DmgTxtBx.Text;
+            shared.character.HealingRate = HRTxtBx.Text;
+            shared.character.Insanity = InsaneTxtBx.Text;
+            shared.character.Power = Convert.ToInt32(PwrTxtBx.Text);
+            shared.character.Def = DefTxtBx.Text;
+            shared.character.Corruption = CorruptTxtBx.Text;
+            shared.character.Perception = PerceptTxtBx.Text;
         }
     }
 }
