@@ -196,14 +196,13 @@ namespace rpgAssist
             for (int i = 0; i < shared.spellListView.Items.Count; i++)
             {
                 DependencyObject obj = shared.spellListView.ItemContainerGenerator.ContainerFromIndex(i);
-                Spell currSpell = shared.character.spells.Where(x => x.SpellName == SpellListView.Items[i].ToString()).First();
+                ListViewItem item = (ListViewItem)obj;
+                Spell currSpell = shared.character.spells.Where(x => x.SpellName == item.Content.ToString()).First();
                 if (currSpell != null)
                 {
-                    if (shared.currentSpell.Casts >= shared.currentSpell.CastsPerDay)
-                    {
+                    if (shared.currentSpell.Casts >= shared.currentSpell.CastsPerDay) {
                         Color col = (Color)ColorConverter.ConvertFromString("Red");
                         Brush brush = new SolidColorBrush(col);
-                        ListViewItem item = (ListViewItem)obj;
                         item.Background = brush;
                     }
                 }
@@ -213,11 +212,10 @@ namespace rpgAssist
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             if (shared.currentSpell == null)
-            {
                 return;
-            }
             SpellForm spellForm = new SpellForm();
             spellForm.Show();
+            updateSpellInfo();
         }
 
         public void SpellListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

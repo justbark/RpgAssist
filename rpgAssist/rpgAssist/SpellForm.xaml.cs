@@ -41,7 +41,6 @@ namespace rpgAssist
         private void SubmitEditBtn_Click(object sender, RoutedEventArgs e)
         {
             Spell currSpell = shared.currentSpell != null ? shared.currentSpell : new Spell();
-
             if (SpellNameEditTxtBx.Text != currSpell.SpellName && currSpell == shared.currentSpell)
             {
                 currSpell.SpellName = SpellNameEditTxtBx.Text;
@@ -56,7 +55,7 @@ namespace rpgAssist
             else {
                 currSpell.SpellName = SpellNameEditTxtBx.Text;
             }
-
+            
             currSpell.Rank = Convert.ToInt32(RankEditTxtBx.Text);
             currSpell.Description = DescriptionEditTxtBx.Text;
             currSpell.Requirement = ReqEditTxtBx.Text;
@@ -70,8 +69,8 @@ namespace rpgAssist
                 ListViewItem newItem = new ListViewItem();
                 newItem.Content = currSpell.SpellName;
                 shared.spellListView.Items.Add(newItem);
-                shared.currentSpell = currSpell;
             }
+            shared.currentSpell = currSpell;
             this.Close();
         }
     }
