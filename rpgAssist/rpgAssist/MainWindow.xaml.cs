@@ -223,8 +223,8 @@ namespace rpgAssist
             {
                 string msg = "you cannot cast this spell anymore";
                 string caption = "No more casts!";
-
                 MessageBox.Show(msg, caption, MessageBoxButton.OK);
+                return;
             }
             shared.currentSpell.Casts = shared.currentSpell.Casts + 1;
             
