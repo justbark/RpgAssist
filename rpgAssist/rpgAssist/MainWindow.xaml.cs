@@ -225,7 +225,8 @@ namespace rpgAssist
             updateChar();
             //use this to update spell info next to the list box.
             //get the current spell from the listbox.Selected item.
-            shared.currentSpell = shared.character.spells.Where(x => x.SpellName == SpellListView.SelectedItem.ToString()).First();
+            ListViewItem currItem = (ListViewItem)SpellListView.SelectedItem;
+            shared.currentSpell = shared.character.spells.Where(x => x.SpellName == currItem.Content.ToString()).First();
             //update spell labels to the right of SpellListbox
             updateSpellInfo();
         }
