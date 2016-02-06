@@ -67,6 +67,13 @@ namespace rpgAssist
         public void computeCPD(int pwr)
         {
             this.castsPerDay = (pwr + 1) - this.Rank;
+            if (shared.character.ExpertPath == "wizard")
+            {
+                if (this.Rank <= 1)
+                {
+                    this.castsPerDay++;
+                }
+            }
         }
         
     }

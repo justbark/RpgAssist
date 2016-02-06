@@ -11,27 +11,27 @@
             <TabItem x:Name="CharInfoTab" Header="Character Info">
                 <Grid x:Name="CharInfoGrid" Background="#FFE5E5E5" Margin="0,-3,-0.2,3.2">
                     <Label x:Name="CharNameLbl" Content="Character Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="CharNameTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+                    <TextBox x:Name="CharNameTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" IsEnabled="False"/>
                     <Label x:Name="AncestryLbl" Content="Ancestry:" HorizontalAlignment="Left" Margin="14,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="AncestryTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+                    <TextBox x:Name="AncestryTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" IsEnabled="False"/>
                     <Label x:Name="AgeLbl" Content="Age:" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="AgeTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.56,0.522"/>
+                    <TextBox x:Name="AgeTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.56,0.522" IsEnabled="False"/>
                     <Label x:Name="GenderLbl" Content="Gender:" HorizontalAlignment="Left" Margin="14,97,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="GenderTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+                    <TextBox x:Name="GenderTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" IsEnabled="False"/>
                     <Label x:Name="BuildLbl" Content="Build:" HorizontalAlignment="Left" Margin="14,125,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="BuildTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+                    <TextBox x:Name="BuildTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" IsEnabled="False"/>
                     <Label x:Name="ReligionLbl" Content="Religion:" HorizontalAlignment="Left" Margin="14,156,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="ReligionTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+                    <TextBox x:Name="ReligionTxtBx" HorizontalAlignment="Left" Height="23" Margin="113,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" IsEnabled="False"/>
                     <Label x:Name="langLabel" Content="Language:" HorizontalAlignment="Left" Margin="14,181,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="LangTxtBx" HorizontalAlignment="Left" Height="117" Margin="83,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"/>
+                    <TextBox x:Name="LangTxtBx" HorizontalAlignment="Left" Height="117" Margin="83,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" IsEnabled="False"/>
                     <Label x:Name="AppearanceLbl" Content="Appearance:" HorizontalAlignment="Left" Margin="337,10,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="AppearanceTxtBx" HorizontalAlignment="Left" Height="51" Margin="417,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334"/>
+                    <TextBox x:Name="AppearanceTxtBx" HorizontalAlignment="Left" Height="51" Margin="417,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" IsEnabled="False"/>
                     <Label x:Name="PersonalityLbl" Content="Personality:" HorizontalAlignment="Left" Margin="337,69,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="PersTxtBx" HorizontalAlignment="Left" Height="51" Margin="417,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334"/>
+                    <TextBox x:Name="PersTxtBx" HorizontalAlignment="Left" Height="51" Margin="417,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" IsEnabled="False"/>
                     <Label x:Name="TalentsLbl" Content="Racial Talents:" HorizontalAlignment="Left" Margin="324,125,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TalentsTxtBx" HorizontalAlignment="Left" Height="54" Margin="417,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334"/>
+                    <TextBox x:Name="TalentsTxtBx" HorizontalAlignment="Left" Height="54" Margin="417,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" IsEnabled="False"/>
                     <Label x:Name="ProfLbl" Content="Professions:" HorizontalAlignment="Left" Margin="335,181,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="ProfTxtBx" HorizontalAlignment="Left" Height="114" Margin="417,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334"/>
+                    <TextBox x:Name="ProfTxtBx" HorizontalAlignment="Left" Height="114" Margin="417,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" IsEnabled="False"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="OtherCharInfoTab" Header="Other" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="53.6">
@@ -74,7 +74,9 @@
                     <Button x:Name="AddSpellBtn" Content="Add Spell" HorizontalAlignment="Left" Margin="189,34,0,0" VerticalAlignment="Top" Width="75" Click="AddSpellBtn_Click"/>
                     <Button x:Name="CastBtn" Content="Cast" HorizontalAlignment="Left" Margin="189,57,0,0" VerticalAlignment="Top" Width="75" Click="CastBtn_Click"/>
                     <Label x:Name="SpellsLbl" Content="Spells:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <GroupBox x:Name="SpellGroupBx" Header="Spell Info" HorizontalAlignment="Left" Margin="189,91,0,0" VerticalAlignment="Top" Height="220" Width="559"/>
+                    <GroupBox x:Name="SpellGroupBx" Header="Spell Info" HorizontalAlignment="Left" Margin="189,91,0,0" VerticalAlignment="Top" Height="220" Width="559">
+                        <TextBox x:Name="descriptionToChangeTxtBx" HorizontalAlignment="Left" Height="69" Margin="20,127,-2.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" IsReadOnly="True"/>
+                    </GroupBox>
                     <Grid x:Name="SpellInfoGrid" HorizontalAlignment="Left" Height="202" Margin="201,99,0,0" VerticalAlignment="Top" Width="550">
                         <Label x:Name="SpellNameLbl" Content="Spell:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="SpellToChangeLbl" Content="" HorizontalAlignment="Left" Margin="53,10,0,0" VerticalAlignment="Top"/>
@@ -85,7 +87,6 @@
                         <Label x:Name="AreLbl" Content="Target / Area:" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="AreaToChangeLbl" Content="" HorizontalAlignment="Left" Margin="95,88,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="DescriptionLbl" Content="Description:" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
-                        <Label x:Name="DescriptionToChangeLbl" Content="" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="530" Height="53"/>
                         <Label x:Name="SpentLbl" Content="Spent:" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="SpentToChangeLbl" Content="" HorizontalAlignment="Left" Margin="362,10,0,0" VerticalAlignment="Top"/>
                         <Label x:Name="CastsPerDayLbl" Content="Casts/Day:" HorizontalAlignment="Left" Margin="314,36,0,0" VerticalAlignment="Top"/>
@@ -103,10 +104,11 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
+                    <Button x:Name="RestBtn" Content="Rest" HorizontalAlignment="Left" Margin="269,33,0,0" VerticalAlignment="Top" Width="75" Click="RestBtn_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" Margin="524,485,0,0" VerticalAlignment="Top" Width="75" Click="SaveBtn_Click"/>
+        <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" Margin="524,485,0,0" VerticalAlignment="Top" Width="75" Click="SaveBtn_Click" IsEnabled="False"/>
         <Button x:Name="LoadBtn" Content="Load" HorizontalAlignment="Left" Margin="604,484,0,0" VerticalAlignment="Top" Width="75" Click="LoadBtn_Click"/>
         <Button x:Name="NewCharBtn" Content="New" HorizontalAlignment="Left" Margin="684,485,0,0" VerticalAlignment="Top" Width="75" Click="NewCharBtn_Click"/>
         <GroupBox x:Name="AttributesGrpBx" Header="Attributes" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Height="159" Width="509">
@@ -116,31 +118,31 @@
                 <Label x:Name="AgilLbl" Content="Agility" HorizontalAlignment="Left" Margin="263,9,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="IntLbl" Content="Int." HorizontalAlignment="Left" Margin="377,10,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="AttributesLbl" Content="Health     Damage     Healing rate     Insanity     Power     Def.     Corruption     Perception" HorizontalAlignment="Left" Margin="0,93,0,0" VerticalAlignment="Top" Width="475"/>
-                <TextBox x:Name="StrTxtBx" HorizontalAlignment="Left" Height="23" Margin="55,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
-                <TextBox x:Name="WillTxtBx" HorizontalAlignment="Left" Height="23" Margin="157,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
-                <TextBox x:Name="AgilTxtBx" HorizontalAlignment="Left" Height="23" Margin="263,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
-                <TextBox x:Name="IntTxtBx" HorizontalAlignment="Left" Height="23" Margin="365,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
-                <TextBox x:Name="HealthTxtBx" HorizontalAlignment="Left" Height="23" Margin="10,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
-                <TextBox x:Name="DmgTxtBx" HorizontalAlignment="Left" Height="23" Margin="63,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
-                <TextBox x:Name="HRTxtBx" HorizontalAlignment="Left" Height="23" Margin="133,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
-                <TextBox x:Name="InsaneTxtBx" HorizontalAlignment="Left" Height="23" Margin="201,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
-                <TextBox x:Name="PwrTxtBx" HorizontalAlignment="Left" Height="23" Margin="254,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
-                <TextBox x:Name="DefTxtBx" HorizontalAlignment="Left" Height="23" Margin="298,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
-                <TextBox x:Name="CorruptTxtBx" HorizontalAlignment="Left" Height="23" Margin="355,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
-                <TextBox x:Name="PerceptTxtBx" HorizontalAlignment="Left" Height="23" Margin="425,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"/>
+                <TextBox x:Name="StrTxtBx" HorizontalAlignment="Left" Height="23" Margin="55,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" IsEnabled="False"/>
+                <TextBox x:Name="WillTxtBx" HorizontalAlignment="Left" Height="23" Margin="157,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" IsEnabled="False"/>
+                <TextBox x:Name="AgilTxtBx" HorizontalAlignment="Left" Height="23" Margin="263,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" IsEnabled="False"/>
+                <TextBox x:Name="IntTxtBx" HorizontalAlignment="Left" Height="23" Margin="365,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" IsEnabled="False"/>
+                <TextBox x:Name="HealthTxtBx" HorizontalAlignment="Left" Height="23" Margin="10,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+                <TextBox x:Name="DmgTxtBx" HorizontalAlignment="Left" Height="23" Margin="63,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+                <TextBox x:Name="HRTxtBx" HorizontalAlignment="Left" Height="23" Margin="133,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+                <TextBox x:Name="InsaneTxtBx" HorizontalAlignment="Left" Height="23" Margin="201,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+                <TextBox x:Name="PwrTxtBx" HorizontalAlignment="Left" Height="23" Margin="254,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+                <TextBox x:Name="DefTxtBx" HorizontalAlignment="Left" Height="23" Margin="298,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+                <TextBox x:Name="CorruptTxtBx" HorizontalAlignment="Left" Height="23" Margin="355,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+                <TextBox x:Name="PerceptTxtBx" HorizontalAlignment="Left" Height="23" Margin="425,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="RollGrpBx" Header="Roll" HorizontalAlignment="Left" Margin="528,344,0,0" VerticalAlignment="Top" Height="135" Width="231">
             <Grid x:Name="RollGrid" HorizontalAlignment="Left" Height="113" Margin="0,0,-2.6,-0.2" VerticalAlignment="Top" Width="221">
-                <TextBox x:Name="DieNumberTxtBx" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+                <TextBox x:Name="DieNumberTxtBx" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" IsEnabled="False"/>
                 <Label x:Name="DieDLbl" Content="d" HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="DieTypeTxtBx" HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+                <TextBox x:Name="DieTypeTxtBx" HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" IsEnabled="False"/>
                 <Label x:Name="PlusLbl" Content="+" HorizontalAlignment="Left" Margin="111,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="ModifierTxtBx" HorizontalAlignment="Left" Height="23" Margin="134,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+                <TextBox x:Name="ModifierTxtBx" HorizontalAlignment="Left" Height="23" Margin="134,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" IsEnabled="False"/>
                 <Label x:Name="ResultLbl" Content="Result:" HorizontalAlignment="Left" Margin="6,33,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="ResultToChangeLbl" Content="" HorizontalAlignment="Left" Margin="51,33,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="RollBtn" Content="Roll" HorizontalAlignment="Left" Margin="168,33,0,0" VerticalAlignment="Top" Width="43" Click="RollBtn_Click"/>
-                <ListBox x:Name="ResultListBx" HorizontalAlignment="Left" Height="46" Margin="6,57,0,0" VerticalAlignment="Top" Width="205"/>
+                <Button x:Name="RollBtn" Content="Roll" HorizontalAlignment="Left" Margin="168,33,0,0" VerticalAlignment="Top" Width="43" Click="RollBtn_Click" IsEnabled="False"/>
+                <ListBox x:Name="ResultListBx" HorizontalAlignment="Left" Height="46" Margin="6,57,0,0" VerticalAlignment="Top" Width="205" IsEnabled="False"/>
             </Grid>
         </GroupBox>
 

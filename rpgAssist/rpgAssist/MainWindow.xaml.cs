@@ -74,6 +74,11 @@ namespace rpgAssist
 
         private void NewCharBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (CharNameTxtBx.IsEnabled == false)
+            {
+                enableLabels();
+            }
+
             shared.character = new Character();
             CharNameTxtBx.Clear();
             AncestryTxtBx.Clear();
@@ -118,12 +123,18 @@ namespace rpgAssist
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (CharNameTxtBx.IsEnabled == false)
+            {
+                enableLabels();
+            }
+
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = "c:\\";
             openFileDialog1.Filter = "Xml files (*.xml)|*.xml|All files (*.*)|*.*";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
+            
 
             if (openFileDialog1.ShowDialog() == true)
             {
@@ -288,7 +299,52 @@ namespace rpgAssist
             CastsPerDayToChangeLbl.Content = shared.currentSpell.CastsPerDay;
             RankToChangeLbl.Content = shared.currentSpell.Rank;
             DurationToChangeLbl.Content = shared.currentSpell.Duration;
-            DescriptionToChangeLbl.Content = shared.currentSpell.Description;
+            descriptionToChangeTxtBx.Text = shared.currentSpell.Description;
+        }
+        public void enableLabels()
+        {
+            CharNameTxtBx.IsEnabled = true;
+            AncestryTxtBx.IsEnabled = true;
+            AgeTxtBx.IsEnabled = true;
+            GenderTxtBx.IsEnabled = true;
+            BuildTxtBx.IsEnabled = true;
+            ReligionTxtBx.IsEnabled = true;
+            LangTxtBx.IsEnabled = true;
+            AppearanceTxtBx.IsEnabled = true;
+            PersTxtBx.IsEnabled = true;
+            TalentsTxtBx.IsEnabled = true;
+            ProfTxtBx.IsEnabled = true;
+            StrTxtBx.IsEnabled = true;
+            WillTxtBx.IsEnabled = true;
+            IntTxtBx.IsEnabled = true;
+            AgilTxtBx.IsEnabled = true;
+            HealthTxtBx.IsEnabled = true;
+            DmgTxtBx.IsEnabled = true;
+            HRTxtBx.IsEnabled = true;
+            InsaneTxtBx.IsEnabled = true;
+            PwrTxtBx.IsEnabled = true;
+            DefTxtBx.IsEnabled = true;
+            CorruptTxtBx.IsEnabled = true;
+            PerceptTxtBx.IsEnabled = true;
+            DieNumberTxtBx.IsEnabled = true;
+            DieTypeTxtBx.IsEnabled = true;
+            ModifierTxtBx.IsEnabled = true;
+            RollBtn.IsEnabled = true;
+            ResultListBx.IsEnabled = true;
+            SaveBtn.IsEnabled = true;
+        }
+
+        private void RestBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Color col = (Color)ColorConverter.ConvertFromString("Red");
+            Brush brush = new SolidColorBrush(col);
+
+            foreach (Spell spells in shared.character.spells)
+            {
+                shared.currentSpell.Casts = 0;
+                updateSpellInfo();
+            }
+            
         }
     }
 }
